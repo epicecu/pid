@@ -1,17 +1,21 @@
 /**********************************************************************************************
  * Arduino PID Library - Version 1.2.1
  * by Brett Beauregard <br3ttb@gmail.com> brettbeauregard.com
+ * Forked & maintained by David Cedar <david@epicecu.com> epicecu.com
  *
  * This Library is licensed under the MIT License
  **********************************************************************************************/
 
-#if ARDUINO >= 100
-  #include "Arduino.h"
+#if defined(__has_include) && __has_include(<Arduino.h>)
+   #include "Arduino.h"
 #else
-  #include "WProgram.h"
+   #include <chrono>
+   unsigned long millis(){
+      return std::chrono::system_clock::now().time_since_epoch() / std::chrono::milliseconds(1);
+   }
 #endif
 
-#include <PID_v1.h>
+#include <PID.h>
 
 /*Constructor (...)*********************************************************
  *    The parameters specified here are those for for which we can't set up
