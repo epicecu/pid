@@ -6,7 +6,7 @@
  * This Library is licensed under the MIT License
  **********************************************************************************************/
 
-#if defined(__has_include) && __has_include(<Arduino.h>) && !defined(PID_NATIVE)
+#if defined(__has_include) && __has_include(<Arduino.h>) && !__has_include(<ArduinoFake.h>) && !defined(PID_FORCE_NATIVE)
    #include "Arduino.h"
 #else
    #include <chrono>

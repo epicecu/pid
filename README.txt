@@ -3,7 +3,15 @@
 
 This Library is licensed under the MIT License
 
-Set `define PID_NATIVE` to force the library to use the native standard library
+Set `define PID_FORCE_NATIVE` to force the library to use the native standard library
+
+PlatformIO
+```
+[env:native]
+platform = native
+build_flags = 
+    -D PID_FORCE_NATIVE
+```
 
 - For an ultra-detailed explanation of why the code is the way it is, please visit: 
   http://brettbeauregard.com/blog/2011/04/improving-the-beginners-pid-introduction/
